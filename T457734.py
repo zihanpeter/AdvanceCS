@@ -1,0 +1,15 @@
+from numpy import *
+
+w, x, h  = map(int, input().split())
+q = int(input())
+
+a = ones((w, x, h), dtype=int)
+
+for i in range(q):
+    x1, y1, z1, x2, y2, z2 = map(int, input().split())
+    for i in range(x1 - 1, x2):
+        for j in range(y1 - 1, y2):
+            for k in range(z1 - 1, z2):
+                a[i][j][k] = 0
+
+print(a.sum())
